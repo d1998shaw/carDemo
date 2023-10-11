@@ -37,25 +37,25 @@ let arr=cars;
         arr=arr.filter((n)=>n.price<=maxprice);
     }
     if(fuel){
-        arr = cars.filter(n => {
+        arr = arr.filter(n => {
          model= carMaster.find(m => m.model === n.model);
         return model && model.fuel === fuel;
     });
     }
     if(type){
-        arr = cars.filter(n => {
+        arr = arr.filter(n => {
             model= carMaster.find(m => m.model === n.model);
            return model && model.type === type;
        });
     }
     if(sort==="kms"){
-        arr.sort((a,b)=>a.kms-b.kms);
+        arr=arr.sort((a,b)=>a.kms-b.kms);
     }
     if(sort==="price"){
-        arr.sort((a,b)=>a.price-b.price);
+        arr=arr.sort((a,b)=>a.price-b.price);
     }
     if(sort==="year"){
-        arr.sort((a,b)=>a.year-b.year);
+        arr=arr.sort((a,b)=>a.year-b.year);
     }
     res.send(arr);
     });
